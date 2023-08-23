@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // Target the latest ECMAScript version
+    "module": "CommonJS", // Use CommonJS module system for Node.js
+    "strict": true, // Enable strict type checking
+    "esModuleInterop": true, // Enable compatibility between ES modules and CommonJS
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true // Ensure consistent casing of file names
+  },
+  "include": ["index.ts"],
+  "types": ["node"]
+}
