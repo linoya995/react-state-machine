@@ -1,22 +1,18 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import machine from "react-state-machine";
+import Payment from "./components/containers/PaymentForm";
+import Toggle from "./components/containers/ToggleButton";
+import ErrorBoundary from "./components/containers/ErrorBoundary";
 
 function App() {
-  const msg = machine();
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h1>Welcome</h1>
-      <p>{msg}</p>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-      </div>
+      <ErrorBoundary>
+        <h1> React FSM example</h1>
+        <div style={{ display: "flex" }}>
+          <Payment />
+          <Toggle />
+        </div>
+      </ErrorBoundary>
     </>
   );
 }
