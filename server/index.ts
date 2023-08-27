@@ -1,12 +1,21 @@
-import express, { Request, Response } from "express";
+import express from "express";
+import cors from "cors";
+import routes from "./routes/routes";
 
+// Create Express application
 const app = express();
-const port = process.env.PORT || 5000;
+const PORT = 5000;
 
-app.get("/api/hello", (req: Request, res: Response) => {
-  res.json({ message: "Hello from the backend!" });
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// Attach the routes to the "/api" endpoint
+app.use("/api", routes);
+
+// Start the server and listen on the specified port
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+export default app;
