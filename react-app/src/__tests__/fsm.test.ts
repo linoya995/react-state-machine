@@ -1,5 +1,4 @@
-// Import the FSM class from your library
-const { Fsm } = require("../react-state-machine-library/fsm");
+import { Fsm } from "../react-state-machine-library/fsm/fsm";
 
 // Test suite for FSM functionality
 describe("FSM Tests", () => {
@@ -28,7 +27,7 @@ describe("FSM Tests", () => {
     states,
   };
 
-  let fsm: typeof Fsm; // Declare a variable to hold the FSM instance
+  let fsm: Fsm;
 
   // Set up the FSM instance before each test
   beforeEach(() => {

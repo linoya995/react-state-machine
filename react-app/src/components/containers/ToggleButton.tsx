@@ -18,7 +18,7 @@ const toggleMachine = {
  * Demonstrates the use case of react-state-machine-library
  * with useMachine hook.
  */
-const Toggle = () => {
+const ToggleButton = () => {
   const [fsm, onEvent] = useMachine(toggleMachine);
   const active = fsm.is("active");
 
@@ -34,4 +34,4 @@ const Toggle = () => {
   );
 };
 
-export default Toggle;
+export default ToggleButton;
