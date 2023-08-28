@@ -4,6 +4,7 @@ import "../style/button.scss";
 interface ButtomProps {
   onClick: () => void;
   title: string;
+  disabled?: boolean;
 }
 
 /**
@@ -11,7 +12,12 @@ interface ButtomProps {
  */
 const Button = (props: ButtomProps) => {
   return (
-    <button className="button" type="button" onClick={props.onClick}>
+    <button
+      className="button"
+      type="button"
+      onClick={props.onClick}
+      disabled={props.disabled}
+    >
       {props.title}
     </button>
   );

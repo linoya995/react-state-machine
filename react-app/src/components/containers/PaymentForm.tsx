@@ -7,6 +7,7 @@ import withLogger from "../hoc/WithLogger";
 import Button from "../presentational/Button";
 import Input from "../presentational/Input";
 import { Status } from "../../store/paymentMachine/machineState";
+
 /**
  * Demonstrates the use case of react-state-machine-library with
  * Redux Thunk and a backend service
@@ -20,6 +21,8 @@ const PaymentForm = () => {
   const handlePaymentSubmit = () => {
     dispatch(processPayment(amount));
   };
+
+  const isLoading = paymentState.status === Status.Loading;
 
   // if payment is done successfully
   const isSuccess: boolean =
@@ -44,7 +47,11 @@ const PaymentForm = () => {
             placeholder="Enter amount"
             onChange={(e) => setPaymentAmount(e.target.value)}
           />
-          <Button onClick={handlePaymentSubmit} title={"Submit Payment"} />
+          <Button
+            onClick={handlePaymentSubmit}
+            title={"Submit Payment"}
+            disabled={isLoading}
+          />
 
           {/* Status */}
           <p>Current Payment Status: {paymentState.status}</p>
