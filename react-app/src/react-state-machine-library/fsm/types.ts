@@ -1,5 +1,8 @@
 interface Event {
   name: string;
+
+  // more properties should
+  // be added in the future
 }
 
 interface State {

@@ -17,6 +17,8 @@ const toggleMachine = {
 /**
  * Demonstrates the use case of react-state-machine-library
  * with useMachine hook.
+ * Assumption: this datet needs to be accessed only by this
+ * compoennt - this is why we handle it as a local state.
  */
 const ToggleButton = () => {
   const [fsm, onEvent] = useMachine(toggleMachine);

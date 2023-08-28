@@ -3,7 +3,7 @@ import Payment from "./components/containers/PaymentForm";
 import ToggleButton from "./components/containers/ToggleButton";
 import ErrorBoundary from "./components/containers/ErrorBoundary";
 
-function App() {
+const App = () => {
   return (
     <>
       <ErrorBoundary>
@@ -15,6 +15,6 @@ function App() {
       </ErrorBoundary>
     </>
   );
-}
+};
 
 export default App;
