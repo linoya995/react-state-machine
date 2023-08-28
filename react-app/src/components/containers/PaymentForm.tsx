@@ -34,7 +34,7 @@ const PaymentForm = () => {
 
       {/* Form */}
       {isSuccess ? (
-        <div> {`Thanks you for paying ${amount} $ !`}!!</div>
+        <div> {`Thank you for paying ${amount} $ !`}!!</div>
       ) : (
         <form>
           <label htmlFor="amount">Payment Amount:</label>
